@@ -10,7 +10,7 @@ build_script:
 - cmd: dotnet publish --framework netcoreapp2.0 -c Release ./Web/QueryTree.csproj -o ./dist
 - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 after_build:
-- cmd: 7z a QueryTree.zip dist/
+- cmd: 7z a QueryTree.zip ./web/dist/
 artifacts:
 - path: QueryTree.zip
   name: QueryTree

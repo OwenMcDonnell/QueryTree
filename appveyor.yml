@@ -5,7 +5,7 @@ branches:
 image: Visual Studio 2017
 before_build:
 - cmd: dotnet restore ./Web/QueryTree.csproj --verbosity m
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 build_script:
 - cmd: dotnet publish --framework netcoreapp2.0 -c Release ./Web/QueryTree.csproj -o ./dist
 after_build:
